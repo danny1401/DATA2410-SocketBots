@@ -1,0 +1,44 @@
+CLIENT
+import socket
+
+HOST = 'localhost'
+PORT = 5000
+FORMAT = 'utf-8'
+ADDR = (HOST, PORT)
+
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(ADDR)
+
+# receive message string from server, at a time 1024 B
+msg = client.recv(1024)
+
+# receive as long as message strings are not empty
+while msg:
+    print('Received: ' + msg.decode())
+    msg = client.recv(1024)
+
+//////////////////////////////////////////////////////////
+
+# a TCP/IP server that sends a messages to client
+import socket
+
+
+SERVER
+HOST = 'localhost'
+PORT = 5000
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((HOST, PORT))  # BOT PARAMETER NEEDED
+s.listen()
+
+# Client Connection Invitation
+c, addr = s.accept()
+
+# Display Client Address
+print(f"[NEW CONNECTION] Connection from: {addr}")
+
+# Encodes message to Binary String and sends to the Client
+c.send(b"Hello client, how are you?")
+msg = "Bye!"
+c.send(msg.encode())
+
