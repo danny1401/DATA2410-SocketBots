@@ -169,7 +169,7 @@ def client_control(conn, addr):
         elif chooseBot == "--shutdown":
             shutdown()
 
-        elif chooseBot == "--bcon":
+        elif chooseBot == "--bcON":
             conn.send("Server: Broadcast Mode is turned on. "
                       "You are now able to broadcast messages across all clients.".encode())
             broadcastMode = True
