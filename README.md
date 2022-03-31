@@ -10,6 +10,7 @@ List of instructions:
 * Type --leave to disconnect from the chatbot.
 * Type --disconnect to disconnect from the server.
 
+
 Instructions that do not work as intended:
 * Type --bcON to turn on broadcast mode. You will be able to broadcast your message to every available client on the server until you turn this mode off.
 * Type --bcOFF to turn off broadcast mode.
